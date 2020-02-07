@@ -38,8 +38,8 @@ def find_intersections(wire1, wire2):
                 intersection[dynamic_index] = q2[dynamic_index]
                 if ((p1[dynamic_index] < q2[dynamic_index] and p2[dynamic_index] > q2[dynamic_index]) or
                     (p1[dynamic_index] > q2[dynamic_index] and p2[dynamic_index] < q2[dynamic_index])):
-                    intersection[2] = p1[2] + abs(p2[0] - p1[0]) + abs(p2[1] - p1[1])  
-                    intersection[3] = q1[2] + abs(q2[0] - q1[0]) + abs(q2[1] - q1[1]) 
+                    intersection[2] = p1[2] + abs(q2[dynamic_index] - p1[dynamic_index])
+                    intersection[3] = q1[2] + abs(p2[static_index] - q1[static_index])
                     intersections.append(intersection)
         return intersections
 
